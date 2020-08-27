@@ -1,0 +1,244 @@
+@charset "ufo-8";
+
+header .header-inner #response-hidden {
+    display: none;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-drawer {
+    position: relative;
+    display: block;
+  }
+  
+  /*チェックボックス等は非表示に*/
+  .nav-unshown {
+    display:none;
+  }
+  
+  /*アイコンのスペース*/
+  #nav-open {
+    display: inline-block;
+    width: 35px;
+    height: 25px;
+    vertical-align: middle;
+    margin-top: 17px;
+  }
+  
+  /*ハンバーガーアイコンをCSSだけで表現*/
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 3px;/*線の太さ*/
+    width: 30px;/*長さ*/
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+    right: 0px;
+  }
+  #nav-open span:before {
+    bottom: -8px;
+  }
+  #nav-open span:after {
+    bottom: -16px;
+  }
+  
+  /*閉じる用の薄黒カバー*/
+  #nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  
+  /*中身*/
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 330px;/*最大幅（調整してください）*/
+    height: 100%;
+    background: #4c77af;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(105%);/*左に隠しておく*/
+  }
+  
+  /*チェックが入ったらもろもろ表示*/
+  #nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+
+
+  #nav-content ul {
+      list-style: none;
+      text-align: center;
+      display: inline-block;
+  }
+
+  #nav-content ul li {
+      height: auto;
+      width: 300px;
+      /*background-color: blueviolet;*/
+      margin-top: 30px;
+  }
+
+  #nav-content ul li a {
+      font-size: 28px;
+      color: white;
+      font-weight: 600;
+  }
+
+  .icon-wrap {
+      height: auto;
+      width: auto;
+     text-align: center;
+  }
+  #icon {
+      margin-left: 50px;
+  }
+
+
+
+  .Billboard {
+    background-position: center;
+    background-size: 400px 400px;
+    animation: anim 2s forwards;
+  }
+
+  @keyframes anim {
+    0% {
+    transform: translateX(0px);
+    opacity: 1;
+    }
+  
+    100% {
+    transform: translateX(-100px);
+    opacity: 0.9;
+    }
+  }
+
+  .TopPage img {
+    width: 100%;
+    padding: 0;
+    float: unset;
+    min-width: 600px;
+  }
+
+  .news-bord {
+    height: 1700px;
+}
+
+.news-bord-wrap ul li {
+  margin-bottom: 10px;
+  padding-bottom: 15px;
+}
+
+  .news-bord-wrap ul li time {
+    display: block;
+}
+
+.news-bord-wrap ul li p {
+  display: block;
+}
+
+
+footer {
+    height: auto;
+    width: 100%;
+  }
+  
+  .footer-wrap {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+  }
+  
+  .footer-wrap nav ul {
+    display: block;
+    width: 100%;
+    flex-wrap: unset;
+    justify-content: unset;
+    margin-left: 0;
+    height: auto;
+  }
+  
+  .footer-wrap nav ul li {
+    height: auto;
+    width: auto;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+  
+  
+  .footer-wrap nav ul li a {
+    display: inline-block;
+    height: 16.66%;
+    width: 100%;
+    line-height: 3;
+    padding-left: 10%;
+  }
+  
+  .footer-wrap nav ul li:nth-child(odd) {
+    border-bottom: 0;
+    border-top: 0;
+  }
+  
+  .footer_bar {
+    width: 100%;
+    height: auto;
+    margin: 20px auto 0 auto;
+  }
+  
+  .footer_bar img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+  }
+  
+  .footer-wrap p {
+    text-align: center;
+    font-size: 10px;
+    opacity: 0.8;
+  }
+  #char1 {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    box-ordinal-group: 2;
+  }
+  
+  #char2 {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    box-ordinal-group: 1;
+  }
+  
